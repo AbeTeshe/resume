@@ -20,9 +20,9 @@ app.use(bodyParser.urlencoded({limit: "30mb", extended: true}));
 app.use(cors());
 
 
-const CONNECTION_URL = 'mongodb+srv://Abe_user:abe%40123@test-cluster.r34xa.mongodb.net/resume?retryWrites=true&w=majority';
+
 const PORT = 5000;
-mongoose.connect(CONNECTION_URL)
+mongoose.connect(process.env.CONNECTION_URL)
   .then(() => console.log("DB connection Successful!"))
   .catch((err) => {
       console.log(err);

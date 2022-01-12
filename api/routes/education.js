@@ -13,7 +13,7 @@ router.post("/", verifyToken, async(req, res)=> {
 })
 
 //UPDATE
-router.put("/:id",verifyToken, async(req, res) => {
+router.put("/:id", verifyToken, async(req, res) => {
     try {
         const updatedEducation = await EducationModel.findByIdAndUpdate(req.params.id, {$set: req.body}, {new: true});
         res.status(200).json(updatedEducation);
